@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="sv"> 
+    <head>
+        <title>IdaMovies</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="../CSS/stylesheet.css">
+        <script src="https://kit.fontawesome.com/74e6607f1f.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <header>
+            <a href="index.html">
+                <img src="../IMAGES/Filmaker Studio mindre.jpg" alt="logo">
+            </a>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Startsida</a></li>
+                <li><a href="aboutUs.html">Om Oss</a></li>
+            </ul>
+        </nav>
+
+        <section id="movie-information">
+            <div class="moviePoster">
+                <img src="../IMAGES/jaws.jpg" alt="Filmposter på Jaws">
+            </div>
+            <div class="info">
+                <h1>Filmtitel</h1>
+                <p>Årtal: XXXX</p>
+                <p>Betyg: X/4 
+                    <span class="rating">
+                    <span class="gray-star">☆</span>
+                    <span class="gray-star">☆</span>
+                    <span class="gray-star">☆</span>
+                    <span class="gray-star">☆</span>
+                    </span>
+                  642K
+                  <div class="rating-distribution">
+                    <h3>Betygsfördelning:</h3>
+                    <div class="bar">
+                        <div class="rating">4 stjärnor</div>
+                        <div class="fill" style="width: 60%;"></div>
+                        <div class="percentage">60%</div>
+                    </div>
+                    <div class="bar">
+                        <div class="rating">3 stjärnor</div>
+                        <div class="fill" style="width: 30%;"></div>
+                        <div class="percentage">30%</div>
+                    </div>
+                    <div class="bar">
+                        <div class="rating">2 stjärnor</div>
+                        <div class="fill" style="width: 8%;"></div>
+                        <div class="percentage">8%</div>
+                    </div>
+                    <div class="bar">
+                        <div class="rating">1 stjärna</div>
+                        <div class="fill" style="width: 2%;"></div>
+                        <div class="percentage">2%</div>
+                    </div>
+                </div>  
+                </p>
+                <p>Handling: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
+                <video controls>
+                    <source src="../VIDEOS/1434659607842-pgv4ql-1563648199594.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <section id="user-reviews">
+            <h1>Användarrecensioner</h1>
+            
+            <aside class="user-rating-form">
+                <h2>Skriv din recension på filmen</h2>
+                <form action="reviewFormular.php" method="post">
+                    <label for="uname">Namn:</label>
+                    <input type="text" id="fname" name="firstname" required>
+                    
+                    <label for="rating">Betyg:</label>
+                    <div class="rating">
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
+                    </div>
+                    
+                    <label for="review">Recension:</label>
+                    <textarea id="rewiew" name="rewiew" rows="10" required></textarea>
+
+                    <input type="submit" value="Skicka">
+                </form>
+            </aside>
+
+            <aside class="user-ratings">
+                <div class="user-review">
+                    <h2>Användare 1:</h2>
+                    <div class="stars">
+                        <span class="filled-star">★</span>
+                        <span class="filled-star">★</span>
+                        <span class="filled-star">★</span>
+                        <span class="empty-star">☆</span>
+                        <span class="empty-star">☆</span>
+                    </div>
+                    <p>Recensionstext från användare 1.</p>
+                </div>
+                <div class="user-review">
+                    <h2>Användare 2:</h2>
+                    <div class="stars">
+                        <span class="filled-star">★</span>
+                        <span class="filled-star">★</span>
+                        <span class="filled-star">★</span>
+                        <span class="filled-star">★</span>
+                        <span class="filled-star">★</span>
+                    </div>
+                    <p>Recensionstext från användare 2.</p>
+                </div>
+                <a href="#" id="show-more-reviews">Visa fler användarrecensioner</a>
+            </aside>
+        </section>
+        
+        <footer>
+            <p>&copy; 2023 Din Webbplats</p>
+    
+            <div class="social-media">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-tiktok"></i>
+            </div> 
+    
+        </footer>
+
+    </body>
+
+ </html>       

@@ -1,0 +1,688 @@
+/* Reset standard margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #461220;
+    color: #fff;
+    margin: 20px;
+}
+
+/* Header style */
+header {
+    background-image: url('../IMAGES/retro.WebP');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; /* Avoid repeating the background image */
+    padding: 10px; 
+    height: 400px; /* Set a specific height */
+}
+
+header img{
+    max-width: 200px;
+    height: auto;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+/* Searchbar style */
+#search {
+    background-color: #461220;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding: 10px;
+    text-align: center; 
+}
+
+#search h2 {
+    margin-bottom: 10px; 
+}
+
+#search input[type="text"] {
+    width: 600px; 
+    height: 40px;
+    background-color: #69212d;
+    color: #fff;
+}
+
+#search ::placeholder {
+    color: #fff;
+}
+
+#search input[type="submit"] {
+    width: 100px; 
+    height: 30px;
+}
+
+/* Navigation meny style */
+nav {
+    background-color: #461220;
+    padding: 10px; 
+    text-align: left; 
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0; 
+}
+
+nav li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Sections styles */
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/*Heading for the Top movies*/
+#top-list{
+    background-color: #461220;
+    color: #fff;
+}
+
+#top-list h1{
+    margin-bottom: 10px;
+}
+
+/*Flexbox to Top movies */
+.top-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Wrap to handle if there are too many movies to fit on a row */
+    color: #ffffff;
+    text-align: left;
+    background-color: #461220;
+    margin-bottom: 10px;
+}
+
+/* Adjust the size of the individual movies */
+.movieBest-rated,
+.movieSecondBest-rated,
+.movieThirdBest-rated,
+.movieTopTenBest-rated {
+    width: 300px; 
+    color: white;
+}
+
+.movieBest-rated img{
+    max-width: 200px;
+    height: auto;
+}
+
+.movieSecondBest-rated img{
+    max-width: 200px;
+    height: auto;
+}
+.movieThirdBest-rated img{
+    max-width: 200px;
+    height: auto;
+}
+.movieTopTenBest-rated img{
+    max-width: 200px;
+    height: auto;
+}
+
+/*The moving animation on top 1 movie*/
+.fa-beat {
+    font-size: 56px; 
+    margin-left: 20px;
+}
+
+/*The animations on top 2 and 3 movies*/
+.fa-solid {
+    font-size: 48px; 
+    margin-left: 20px;
+}
+
+/* Colors to the rate buttons */
+.buttonGold {
+    background-color: #b69121;
+    display: inline-block;
+    padding: 3px 7px; 
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonSilver {
+    background-color: #adb5bd; 
+    display: inline-block;
+    padding: 3px 7px; 
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonBronze {
+    background-color: #9e4936; 
+    display: inline-block;
+    padding: 3px 7px; 
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonOrdinary {
+    background-color: #e85d04;
+    display: inline-block;
+    padding: 3px 7px; 
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hover-effect for rate buttons */
+.buttonGold:hover {
+    background-color: #765e16; 
+}
+
+.buttonSilver:hover {
+    background-color: #81868c; 
+}
+
+.buttonBronze:hover {
+    background-color: #63320e; 
+}
+
+.buttonOrdinary:hover {
+    background-color: #dc2f02;
+}
+
+/* Read more about the movie buttons */
+.buttonGold-ReadMore {
+    display: inline-block;
+    padding: 3px 7px; 
+    background-color: #b69121;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonSilver-ReadMore {
+    display: inline-block;
+    padding: 3px 7px; 
+    background-color: #adb5bd;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonBronze-ReadMore {
+    display: inline-block;
+    padding: 3px 7px; 
+    background-color: #9e4936;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonOrdinary-ReadMore {
+    display: inline-block;
+    padding: 3px 7px; 
+    background-color: #e85d04;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hover-effect for read more about the movie buttons */
+.buttonGold-ReadMore:hover {
+    background-color: #765e16; 
+}
+
+.buttonSilver-ReadMore:hover {
+    background-color: #81868c; 
+}
+
+.buttonBronze-ReadMore:hover {
+    background-color: #63320e; 
+}
+
+.buttonOrdinary-ReadMore:hover {
+    background-color: #dc2f02;
+}
+
+/* Style for show more button */
+#show-more {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #e85d04;
+    color: #fff;
+    text-decoration: none;
+    margin: auto auto;
+    width: auto;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#show-more:hover {
+    background-color: #dc2f02;
+}
+
+/* Contact form style */
+#information-content {
+    background-color: #69212d;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #ffffff;
+    text-align: left;
+    border: none;
+}
+
+#information-content article{
+   margin-bottom: 20px;
+}
+
+aside {
+    background-color: #461220;
+    padding: 20px;
+    color: #fff;
+    border: none;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    background-color: #461220;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #69212d;
+    border-radius: 4px;
+    background-color: #69212d;
+    color: #fff;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #e85d04;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #dc2f02;
+}
+
+/* Style for movie information */
+#movie-information {
+    display: flex;
+    padding: 20px;
+    background-color: #461220;
+}
+
+.moviePoster {
+    flex: 1;
+    padding: 20px;
+}
+
+.moviePoster img {
+    max-width: 100%;
+}
+
+.info h1, p {
+    margin-bottom: 10px;
+    padding: 10px;
+    color: #fff;
+}
+
+.rating {
+    color: #ccc; 
+}
+
+.gray-star {
+    font-size: 20px; 
+}
+
+.rating-distribution {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #69212d;
+    color: #fff;
+}
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.rating {
+    font-weight: bold;
+    color: #fff;
+}
+
+.fill {
+    background-color: #e85d04;
+    height: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.percentage {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Styling for the video player */
+video {
+    width: 100%; 
+    max-width: 100%; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+/* Styling for controller */
+video::-webkit-media-controls {
+    color: white; 
+    border-radius: 5px; 
+}
+
+/* Styling for the timer */
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display {
+    color: white; 
+}
+
+/* Styling for buttons (play, pause, volume, full screen) */
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-pause-button,
+video::-webkit-media-controls-mute-button,
+video::-webkit-media-controls-fullscreen-button {
+    background-color: #e85d04; 
+    color: white; 
+    border: none; 
+    border-radius: 50%; 
+    width: 30px; 
+    height: 30px;
+}
+
+/* Styling for the video progress bar */
+video::-webkit-media-controls-seek-back-button,
+video::-webkit-media-controls-seek-forward-button {
+    color: white; 
+}
+
+video::-webkit-media-controls-progress-bar {
+    background-color: #e85d04; 
+}
+
+video::-webkit-media-controls-volume-slider {
+    width: 60px; /* Ändra volymskynkarens bredd (anpassa efter behov) */
+    height: 8px; /* Ändra volymskynkarens höjd (anpassa efter behov) */
+    border-radius: 5px; /* Runda hörnen på volymskynkaren */
+    background-color: #e85d04; /* Ändra bakgrundsfärgen för volymskynkaren */
+}
+
+/* Style for User Reviews */
+#user-reviews, .user-ratings {
+    background-color: #461220;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Styling for star rating */
+.rating {
+    display: flex;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.rating label::before {
+    content: "\2605"; /* Star symbol */
+    padding: 5px;
+    color: #ccc;
+}
+
+.rating input:checked + label::before {
+    color: #ffcc00; /* Color for marked stars */
+}
+
+/* The style of other people's reviews of the film*/
+.user-review {
+    margin-bottom: 20px;
+}
+
+.user-review h2 {
+    font-weight: bold;
+}
+
+.stars {
+    color: #fcd02a; /* Color for marked stars */
+}
+
+.filled-star {
+    font-size: 20px; /* Size for the marked stars */
+}
+
+.empty-star {
+    font-size: 20px; /* Size for the empty stars  */
+    color: #ccc; /* Color for the empty stars  */
+}
+
+/* Show more reviews button*/
+#show-more-reviews {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #e85d04;
+    color: #fff;
+    text-decoration: none;
+    margin: auto auto;
+    width: auto;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#show-more-reviews:hover {
+    background-color: #dc2f02;
+}
+
+/* Filter column for search results*/
+#filter {
+    position: absolute;
+    top: auto; /* The distance from the top, change to the height of the header */
+    left: 0; /* Position the filter section to the right */
+    width: 200px; /* Enter desired width here */
+    height: 100%; 
+    background-color: #461220; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    overflow-y: auto; /* Add vertical scroll function if filter options get too long */
+}
+
+.range-label {
+    margin-left: 15px;
+}
+
+/* Style for search-results */
+#search-results {
+    background-color: #461220;
+    color: #fff;
+    text-align: left;
+    margin-left: 180px;
+    padding: 20px;
+}
+
+#search-results h1 {
+    margin-bottom: 10px;
+}
+
+/* Style for footer */
+footer{
+    background-color: #69212d;
+    color:white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Mobil */
+@media screen and (max-width: 768px) {
+    /* Adapt for mobile devices */
+    header {
+        height: auto;
+        img {
+            max-width: 50%;
+            height: auto;
+        }
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    #search input[type="text"] {
+        width: 100%;
+    }
+
+    #filter {
+        width: 40%;
+    }
+
+    #search-results {
+        width: auto; 
+    }
+
+    #search-results img {
+        width: 80%;
+    }
+
+    .top-list-container {
+        flex-direction: column;
+    }
+
+    .movieTopTenBest-rated {
+        width: 100%;
+    }
+
+    .movie-information {
+        flex-direction: column;
+    }
+
+    .info {
+        padding: 10px;
+    }
+
+    .user-rating-form, .user-ratings {
+        width: 100%;
+    }
+
+    .user-review {
+        margin-bottom: 20px;
+    }
+
+    .stars {
+        font-size: 20px;
+    }
+}
+
+/* Laptop */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Customize for laptops */
+    header {
+        height: auto;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    #search input[type="text"] {
+        width: 100%;
+    }
+
+    #filter {
+        width: 20%;
+    }
+
+    #search-results {
+        width: auto; 
+    }
+
+    #search-results img {
+        width: 80%;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+    /* Customize for desktops */
+    /* Works already good */
+}
+
