@@ -142,10 +142,19 @@ h2 {
     max-width: 200px;
     height: auto;
 }
+
 .movieTopTenBest-rated img{
     max-width: 200px;
     height: auto;
 }
+
+/*Ebba testar att få bilden att fylla ut samma area även om den är tom*/
+.movie-frontImage{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
 
 /*The moving animation on top 1 movie*/
 .fa-beat {
