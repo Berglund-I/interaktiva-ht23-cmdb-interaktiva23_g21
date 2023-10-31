@@ -7,6 +7,8 @@
         <link type="text/css" rel="stylesheet" href="../CSS/stylesheet.css">
         <script src="https://kit.fontawesome.com/74e6607f1f.js" crossorigin="anonymous"></script>
         
+        
+        
     </head>
     <body>
         <header>
@@ -24,11 +26,11 @@
         
         <section id="search">
             <h2>Sök efter filmer</h2>
-            <form action="searchResults.html" method="get">
-                <input type="text" name="search" placeholder="Sök efter filmer...">
-                <input type="submit" value="Sök">
+            <form id="search-form" action="searchResults.html" method="get">
+              <input id="search-input" type="text" name="search" placeholder="Sök efter filmer...">
+              <input type="submit" value="Sök">
             </form>
-        </section>
+          </section>
 
         <aside id="filter">
                 <h2>Filter</h2>
@@ -92,83 +94,12 @@
                 </form>
         </aside>
         
-        <section id="search-results">
-                <h1>Sökresultat</h1>
-                <div class="top-list-container">
-
-                    <div class="movieTopTenBest-rated">
-                        <img src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3>Title</h3>
-                        <p>Årtal: XXXX</p>
-                        <p>Betyg: X/4 <button class="buttonOrdinary">Betygsätt</button></p>
-                        <p>Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum. <a href="movieDetailPage.html" class="buttonOrdinary-ReadMore">Läs mer</a></p>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3>Title</h3>
-                        <p>Årtal: XXXX</p>
-                        <p>Betyg: X/4 <button class="buttonOrdinary">Betygsätt</button></p>
-                        <p>Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum. <a href="movieDetailPage.html" class="buttonOrdinary-ReadMore">Läs mer</a></p>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3>Title</h3>
-                        <p>Årtal: XXXX</p>
-                        <p>Betyg: X/4 <button class="buttonOrdinary">Betygsätt</button></p>
-                        <p>Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum. <a href="movieDetailPage.html" class="buttonOrdinary-ReadMore">Läs mer</a></p>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3>Title</h3>
-                        <p>Årtal: XXXX</p>
-                        <p>Betyg: X/4 <button class="buttonOrdinary">Betygsätt</button></p>
-                        <p>Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum. <a href="movieDetailPage.html" class="buttonOrdinary-ReadMore">Läs mer</a></p>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3>Title</h3>
-                        <p>Årtal: XXXX</p>
-                        <p>Betyg: X/4 <button class="buttonOrdinary">Betygsätt</button></p>
-                        <p>Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum. <a href="movieDetailPage.html" class="buttonOrdinary-ReadMore">Läs mer</a></p>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3>Title</h3>
-                        <p>Årtal: XXXX</p>
-                        <p>Betyg: X/4 <button class="buttonOrdinary">Betygsätt</button></p>
-                        <p>Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum. <a href="movieDetailPage.html" class="buttonOrdinary-ReadMore">Läs mer</a></p>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3>Title</h3>
-                        <p>Årtal: XXXX</p>
-                        <p>Betyg: X/4 <button class="buttonOrdinary">Betygsätt</button></p>
-                        <p>Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum. <a href="movieDetailPage.html" class="buttonOrdinary-ReadMore">Läs mer</a></p>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3>Title</h3>
-                        <p>Årtal: XXXX</p>
-                        <p>Betyg: X/4 <button class="buttonOrdinary">Betygsätt</button></p>
-                        <p>Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum. <a href="movieDetailPage.html" class="buttonOrdinary-ReadMore">Läs mer</a></p>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3>Title</h3>
-                        <p>Årtal: XXXX</p>
-                        <p>Betyg: X/4 <button class="buttonOrdinary">Betygsätt</button></p>
-                        <p>Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum. <a href="movieDetailPage.html" class="buttonOrdinary-ReadMore">Läs mer</a></p>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3>Title</h3>
-                        <p>Årtal: XXXX</p>
-                        <p>Betyg: X/4 <button class="buttonOrdinary">Betygsätt</button></p>
-                        <p>Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum. <a href="movieDetailPage.html" class="buttonOrdinary-ReadMore">Läs mer</a></p>
-                    </div>
+        <main>
+            <div id="search-results">
+                <h2 id="searchResults"></h2>
+              <!-- Search results go here -->
             </div>
-            <a href="#" id="show-more">Visa fler filmer</a>
-        </section>
+          </main>
 
 
         <footer>
@@ -181,6 +112,8 @@
             </div> 
 
         </footer>
+
+        <script src="../JS/app.JS"></script>
     </body>
 
 </html>
