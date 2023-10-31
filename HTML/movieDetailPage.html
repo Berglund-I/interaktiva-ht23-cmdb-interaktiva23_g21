@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link type="text/css" rel="stylesheet" href="../CSS/stylesheet.css">
         <script src="https://kit.fontawesome.com/74e6607f1f.js" crossorigin="anonymous"></script>
-        
+        <script src="../JS/app.JS"></script>
     </head>
     <body>
         <header>
@@ -24,12 +24,12 @@
 
         <section id="movie-information">
             <div class="moviePoster">
-                <img src="../IMAGES/jaws.jpg" alt="Filmposter på Jaws">
+                <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="Filmposter för den valda filmen">
             </div>
             <div class="info">
-                <h1>Filmtitel</h1>
-                <p>Årtal: XXXX</p>
-                <p>Betyg: X/4 
+                <h1 class="movieTitle">Filmtitel</h1>
+                <p class="movieYear">Årtal: XXXX</p>
+                <p class="movieRating">Betyg: X/4 
                     <span class="rating">
                     <span class="gray-star">☆</span>
                     <span class="gray-star">☆</span>
@@ -61,7 +61,7 @@
                     </div>
                 </div>  
                 </p>
-                <p>Handling: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
+                <p class="movieDescription">Handling: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
                 <video controls>
                     <source src="../VIDEOS/1434659607842-pgv4ql-1563648199594.mp4" type="video/mp4">
                     Your browser does not support the video tag.

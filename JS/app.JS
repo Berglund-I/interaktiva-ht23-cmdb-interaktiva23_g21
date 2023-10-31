@@ -1,3 +1,4 @@
+/*Poster*/
 fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   .then(response => response.json())
   .then(data => {
@@ -75,6 +76,34 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
     })
 .catch(error => console.error('Fel vid hämtning av data:', error));
 
+/*Betyg*/
+fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
+  .then(response => response.json())
+  .then(data => {
+    
+    const ratingElements = document.querySelectorAll('.movieRating');
+
+    data.movies.forEach((movie, index) => {
+      const imdbID = movie.imdbID;
+
+      fetch(`https://grupp6.dsvkurs.miun.se/api/movies/${imdbID}`)
+      .then(response => response.json())
+      .then(omdbData => {
+        if(omdbData.cmdbScore) {
+            const rating = omdbData.cmdbScore + `/4`;
+            
+            const ratingElement = ratingElements[index];
+            
+            ratingElement.textContent = rating;
+            } else {
+                console.error('Filmens årtal saknas i OMDB API-svaret för IMDb ID:', imdbID);
+                }
+            })
+            .catch(error => console.error('Fel vid hämtning av OMDB-data:', error));
+        });
+    })
+.catch(error => console.error('Fel vid hämtning av data:', error));
+
 /*Sammanfattning*/
 fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   .then(response => response.json())
@@ -95,7 +124,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
             
             plotElement.textContent = plot;
             } else {
-                console.error('Filmtitel saknas i OMDB API-svaret för IMDb ID:', imdbID);
+                console.error('Filmens årtal saknas i OMDB API-svaret för IMDb ID:', imdbID);
                 }
             })
             .catch(error => console.error('Fel vid hämtning av OMDB-data:', error));
@@ -165,6 +194,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
   // Call the getActiveSelection function when the user clicks the search results div
   searchResults.addEventListener('click', getActiveSelection);
   
+
+
+
+
+
