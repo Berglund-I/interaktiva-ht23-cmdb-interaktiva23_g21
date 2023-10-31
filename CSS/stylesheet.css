@@ -561,8 +561,8 @@ video::-webkit-media-controls-volume-slider {
 
 /* Filter column for search results*/
 #filter {
-    position: absolute;
-    top: auto; /* The distance from the top, change to the height of the header */
+    position: fixed;
+    top: 50%; /* The distance from the top, change to the height of the header */
     left: 0; /* Position the filter section to the right */
     width: 200px; /* Enter desired width here */
     height: 100%; 
@@ -577,17 +577,33 @@ video::-webkit-media-controls-volume-slider {
 }
 
 /* Style for search-results */
-#search-results {
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 200px;
     background-color: #461220;
     color: #fff;
     text-align: left;
-    margin-left: 180px;
-    padding: 20px;
-}
-
-#search-results h1 {
+  }
+  
+  .search-results > div {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .search-results img {
+    max-width: 200px;
+    height: auto;
     margin-bottom: 10px;
-}
+  }
+  
+  #search-results h2 {
+    margin-bottom: 10px;
+  }
 
 /* Style for footer */
 footer{
