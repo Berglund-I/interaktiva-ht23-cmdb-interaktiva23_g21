@@ -2,23 +2,28 @@
 fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   .then(response => response.json())
   .then(data => {
-    // Select all the img elements with the class of "movie-frontImage"
     const imgElements = document.querySelectorAll('.movie-frontImage');
+    const buttons = document.querySelectorAll('.buttonGold-ReadMore');
 
-    // Loop through each movie and update its corresponding img element
     data.movies.forEach((movie, index) => {
-      // Get the URL of the new image for the current movie
       const imdbID = movie.imdbID;
-      const imageUrl = `http://img.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f`;
 
-      // Select the corresponding img element for the current movie
-      const imgElement = imgElements[index];
+      fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f`)
+        .then(response => response.json())
+        .then(movieData => {
+          const imgElement = imgElements[index];
+          imgElement.src = movieData.Poster;
 
-      // Set the src attribute of the img element to the new image URL
-      imgElement.src = imageUrl;
+          const button = buttons[index];
+          button.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.href = `movieDetailPage.html?imdbID=${imdbID}`;
+          });
+        })
+        .catch(error => console.error('Error fetching movie data:', error));
     });
   })
-.catch(error => console.error('Fel vid hämtning av data:', error));
+.catch(error => console.error('Error fetching movie list:', error));
 
 /*Filmtitel*/
 fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
@@ -45,6 +50,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
             })
             .catch(error => console.error('Fel vid hämtning av OMDB-data:', error));
         });
+
     })
 .catch(error => console.error('Fel vid hämtning av data:', error));
 
@@ -198,8 +204,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Call the getActiveSelection function when the user clicks the search results div
   searchResults.addEventListener('click', getActiveSelection);
   
-
-
-
 
 

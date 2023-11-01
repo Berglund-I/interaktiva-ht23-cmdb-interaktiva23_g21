@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link type="text/css" rel="stylesheet" href="../CSS/stylesheet.css">
         <script src="https://kit.fontawesome.com/74e6607f1f.js" crossorigin="anonymous"></script>
-        <script src="../JS/app.JS"></script>
+        <script src="../JS/detailPage.js"></script>
     </head>
     <body>
         <header>
@@ -29,14 +29,9 @@
             <div class="info">
                 <h1 class="movieTitle">Filmtitel</h1>
                 <p class="movieYear">Årtal: XXXX</p>
-                <p class="movieRating">Betyg: X/4 
-                    <span class="rating">
-                    <span class="gray-star">☆</span>
-                    <span class="gray-star">☆</span>
-                    <span class="gray-star">☆</span>
-                    <span class="gray-star">☆</span>
-                    </span>
-                  642K
+                <p class="movieDescription">Handling: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
+                <p class="movieRating">Betyg: X/4 </p>
+                <p class="movieVotes">Antal röster: </p>
                   <div class="rating-distribution">
                     <h3>Betygsfördelning:</h3>
                     <div class="bar">
@@ -61,11 +56,6 @@
                     </div>
                 </div>  
                 </p>
-                <p class="movieDescription">Handling: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
-                <video controls>
-                    <source src="../VIDEOS/1434659607842-pgv4ql-1563648199594.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
             </div>
         </section>
 
@@ -74,22 +64,18 @@
             
             <aside class="user-rating-form">
                 <h2>Skriv din recension på filmen</h2>
-                <form action="reviewFormular.php" method="post">
+                <form action="reviewFormular.php" method="post" id="review-form">
                     <label for="uname">Namn:</label>
                     <input type="text" id="fname" name="firstname" required>
-                    
-                    <label for="rating">Betyg:</label>
+                    <label for="recension">Valfri text:</label>
+                    <input type="text" id="recension" name="recension" required>
                     <div class="rating">
                         <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
                         <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
                         <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
                         <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
                     </div>
-                    
-                    <label for="review">Recension:</label>
-                    <textarea id="rewiew" name="rewiew" rows="10" required></textarea>
-
-                    <input type="submit" value="Skicka">
+                    <button type="submit">Skicka</button>
                 </form>
             </aside>
 
