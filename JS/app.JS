@@ -134,6 +134,69 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 //Searchfunction 
+
+//Live Search
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('search-input');
+  const suggestions = document.getElementById('suggestions');
+  
+  searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value;
+  
+    // Kontrollera om inmatningen är tillräckligt lång för att starta sökningen
+    if (searchTerm.length >= 2) {
+      const apiUrl = `https://www.omdbapi.com/?s=${searchTerm}&apikey=f0f87f8f`;
+  
+      // Hämta data från OMDb API
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          // Rensa tidigare sökförslag
+          suggestions.innerHTML = '';
+  
+          if (data.Search) {
+            // Visa sökförslagen
+            suggestions.style.display = 'block';
+  
+            data.Search.forEach(movie => {
+              const suggestion = document.createElement('div');
+              suggestion.classList.add('suggestion');
+
+              // Skapa en bild för filmaffischen
+              const posterImage = document.createElement('img');
+              posterImage.src = movie.Poster;
+              posterImage.alt = 'Filmaffisch';
+              suggestion.appendChild(posterImage);
+
+              // Skapa en p-element för filmtiteln
+              const titleElement = document.createElement('p');
+              titleElement.textContent = movie.Title;
+              titleElement.classList.add('title'); // Lägg till en klass för titeln
+              suggestion.appendChild(titleElement);
+
+              suggestion.addEventListener('click', () => {
+                // Hantera när användaren klickar på ett förslag, t.ex. fyll i sökrutan med förslaget
+                searchInput.value = movie.Title;
+                suggestions.style.display = 'none';
+              });
+              suggestions.appendChild(suggestion);
+            });
+          } else {
+            suggestions.style.display = 'none';
+          }
+        })
+        .catch(error => {
+          console.error('Fel vid sökning:', error);
+        });
+    } else {
+      // Om inmatningen är för kort, dölj förslagen
+      suggestions.style.display = 'none';
+    }
+  });
+  
+}); 
+
+//SearchResults
 function getActiveSelection() {
   const selection = window.getSelection().toString();
   console.log(selection);
@@ -148,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const query = urlParams.get('search');
 
   // Skapa URL för OMDb API-sökning
-  const apiUrl = `http://www.omdbapi.com/?s=${query}&apikey=f0f87f8f`;
+  const apiUrl = `https://www.omdbapi.com/?s=${query}&apikey=f0f87f8f`;
 
   fetch(apiUrl)
     .then(response => response.json())
@@ -186,14 +249,19 @@ document.addEventListener('DOMContentLoaded', () => {
         // Lägg till sökresultaten i sökresultatssektionen
         searchResults.appendChild(searchResultsDiv);
       } else {
-        searchResults.innerHTML = 'Inga resultat hittades.'; //bring to front testa det
+        const noResultsMessage = document.createElement('h1');
+        noResultsMessage.textContent = 'Inga resultat hittades';
+        noResultsMessage.className = 'noResultsMessage'; 
+        searchResults.appendChild(noResultsMessage); 
+        const emptyDiv = document.createElement('div');
+        emptyDiv.style.height = '500px'; // Adjust this value as needed
+        searchResults.appendChild(emptyDiv);
       }
     })
     .catch(error => {
       console.error('Fel vid sökning:', error);
     });
 });
-
 
   // Call the getActiveSelection function when the user clicks the search results div
   searchResults.addEventListener('click', getActiveSelection);

@@ -40,6 +40,7 @@ header h1 {
     align-items: center;
     padding: 10px;
     text-align: center; 
+    position: relative;
 }
 
 #search h2 {
@@ -53,7 +54,7 @@ header h1 {
     color: #fff;
 }
 
-#search ::placeholder {
+#search input::placeholder { /* Rätt syntax för placeholder */
     color: #fff;
 }
 
@@ -61,6 +62,47 @@ header h1 {
     width: 100px; 
     height: 30px;
 }
+
+/*Live search*/
+#suggestions {
+    position: absolute;
+    top: 100%; /* Placera rutan precis under sökrutan */
+    align-items: center;
+    width: 58%;
+    background-color: #461220;
+    
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Korrekt rgba-värde */
+}
+
+#suggestions .suggestion {
+    display: flex; /* Använd flexbox för att placera bild och titel bredvid varandra */
+    border: 1px solid #ddd; /* Lägg till en tunn ram runt varje sökförslag */
+    margin: 5px 0; /* Justera marginalen över och under varje sökförslag */
+    padding: 10px; /* Lägg till ett mellanrum runt innehållet i varje sökförslag */
+}
+
+#suggestions .suggestion img {
+    width: 100px; /* Justera bredden på bilderna efter dina behov */
+    height: auto; /* Anpassa höjden proportionellt */
+    order: 2;
+}
+  
+#suggestions .suggestion .title {
+    flex: 1;
+    font-size: 24px; /* Justera textstorleken efter dina behov */
+    color: #fff; /* Ändra textfärgen efter dina önskemål */
+    order: 1;
+}
+
+/* Använd rätt klass för hover-effekten */
+#suggestions .suggestion:hover {
+    background-color: #69212d;
+    transition: backround-color 0.3s;
+}
+
+
 
 /* Navigation meny style */
 nav {
@@ -561,8 +603,8 @@ video::-webkit-media-controls-volume-slider {
 
 /* Filter column for search results*/
 #filter {
-    position: fixed;
-    top: 50%; /* The distance from the top, change to the height of the header */
+    position: absolute;
+    top: 70%; /* The distance from the top, change to the height of the header */
     left: 0; /* Position the filter section to the right */
     width: 200px; /* Enter desired width here */
     height: 100%; 
@@ -603,6 +645,11 @@ video::-webkit-media-controls-volume-slider {
   
   #search-results h2 {
     margin-bottom: 10px;
+  }
+
+  .noResultsMessage {
+    text-align: center;
+    
   }
 
 /* Style for footer */
