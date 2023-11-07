@@ -531,7 +531,14 @@ video::-webkit-media-controls-volume-slider {
 }
 
 /* Style for User Reviews */
-#user-reviews, .user-ratings {
+#user-reviews{
+    background-color: #461220;
+    color: #fff;
+    padding: 20px;
+
+}
+
+.user-ratings{
     background-color: #461220;
     color: #fff;
     padding: 20px;
@@ -564,6 +571,12 @@ video::-webkit-media-controls-volume-slider {
 /* The style of other people's reviews of the film*/
 .user-review {
     margin-bottom: 20px;
+    background-color: #69212d;
+    color: #fff;
+    padding: 20px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
 }
 
 .user-review h2 {

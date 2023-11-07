@@ -140,6 +140,11 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
 //-----------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------
 
+
+// Call the getActiveSelection function when the user clicks the search results div
+searchResults.addEventListener('click', getActiveSelection);
+
   
+/*rate*/
 
 

@@ -30,31 +30,9 @@
                 <h1 class="movieTitle">Filmtitel</h1>
                 <p class="movieYear">Årtal: XXXX</p>
                 <p class="movieDescription">Handling: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
+                <p class="movieLength">Spellängd: 2 h</p>
                 <p class="movieRating">Poäng: Inget betyg från filmklubben finns för tillfället </p>
                 <p class="movieVotes">Antal röster: </p>
-                  <div class="rating-distribution">
-                    <h3>Betygsfördelning:</h3>
-                    <div class="bar">
-                        <div class="rating">4 stjärnor</div>
-                        <div class="fill" style="width: 60%;"></div>
-                        <div class="percentage">60%</div>
-                    </div>
-                    <div class="bar">
-                        <div class="rating">3 stjärnor</div>
-                        <div class="fill" style="width: 30%;"></div>
-                        <div class="percentage">30%</div>
-                    </div>
-                    <div class="bar">
-                        <div class="rating">2 stjärnor</div>
-                        <div class="fill" style="width: 8%;"></div>
-                        <div class="percentage">8%</div>
-                    </div>
-                    <div class="bar">
-                        <div class="rating">1 stjärna</div>
-                        <div class="fill" style="width: 2%;"></div>
-                        <div class="percentage">2%</div>
-                    </div>
-                </div>  
                 </p>
             </div>
         </section>
@@ -64,7 +42,7 @@
             
             <aside class="user-rating-form">
                 <h2>Skriv din recension på filmen</h2>
-                <form action="reviewFormular.php" method="post" id="review-form">
+                <form method="post" id="review-form">
                     <label for="uname">Namn:</label>
                     <input type="text" id="fname" name="firstname" required>
                     <label for="recension">Valfri text:</label>
@@ -75,35 +53,23 @@
                         <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
                         <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
                     </div>
-                    <button type="submit">Skicka</button>
+                    <a href="#" id="send-review" class="buttonGold-ReadMore">Läs mer</a>
                 </form>
             </aside>
 
             <aside class="user-ratings">
                 <div class="user-review">
                     <h2>Användare 1:</h2>
-                    <div class="stars">
-                        <span class="filled-star">★</span>
-                        <span class="filled-star">★</span>
-                        <span class="filled-star">★</span>
-                        <span class="empty-star">☆</span>
-                        <span class="empty-star">☆</span>
-                    </div>
+                    <p class="movieRating">Betyg: X/4 </p>
                     <p>Recensionstext från användare 1.</p>
                 </div>
                 <div class="user-review">
                     <h2>Användare 2:</h2>
-                    <div class="stars">
-                        <span class="filled-star">★</span>
-                        <span class="filled-star">★</span>
-                        <span class="filled-star">★</span>
-                        <span class="filled-star">★</span>
-                        <span class="filled-star">★</span>
-                    </div>
+                    <p class="movieRating">Betyg: X/4 </p>
                     <p>Recensionstext från användare 2.</p>
                 </div>
-                <a href="#" id="show-more-reviews">Visa fler användarrecensioner</a>
             </aside>
+            <a href="#" id="show-more-reviews">Visa alla användarrecensioner</a>
         </section>
         
         <footer>
