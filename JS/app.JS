@@ -201,8 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-  // Call the getActiveSelection function when the user clicks the search results div
-  searchResults.addEventListener('click', getActiveSelection);
+// Call the getActiveSelection function when the user clicks the search results div
+searchResults.addEventListener('click', getActiveSelection);
   
+/*rate*/
 
 
