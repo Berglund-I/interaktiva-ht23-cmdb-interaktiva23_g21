@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   const movieGenre = document.createElement('h3');
                   const moviePlot = document.createElement('p');
                   const button = document.createElement('a'); // Skapa en länk för knappen
-                 
                   button.href = `movieDetailPage.html?imdbID=${imdbID}`;
                   button.className = 'buttonGold-ReadMore';
                   button.textContent = 'Läs mer';

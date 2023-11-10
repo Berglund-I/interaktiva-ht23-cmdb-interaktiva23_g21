@@ -1,18 +1,20 @@
-
+/*Get current URL and return imdbID*/
 const urlParams = new URLSearchParams(window.location.search);
 const imdbID = urlParams.get('imdbID');
 
+/*Get movie details from OMDB API and display on movieDetailPage.html*/
 fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f`)
   .then(response => response.json())
   .then(movieData => {
     document.querySelector('.movie-frontImage').src = movieData.Poster;
     document.querySelector('.movieTitle').textContent = movieData.Title;
-    document.querySelector('.movieYear').textContent =  'Årtal: ' + movieData.Year;
+    document.querySelector('.movieYear').textContent =  'Utgivningsår: ' + movieData.Year;
     document.querySelector('.movieDescription').textContent = 'Beskrivning: ' + movieData.Plot;
     document.querySelector('.movieLength').textContent = 'Spellängd: ' + movieData.Runtime;
   })
 .catch(error => console.error('Error:', error));
 
+/*Get movie rating from CMDB API and display on movieDetailPage.html*/
 fetch(`https://grupp6.dsvkurs.miun.se/api/movies/${imdbID}`)
     .then(response => response.json())
     .then(movieData => {
@@ -20,6 +22,7 @@ fetch(`https://grupp6.dsvkurs.miun.se/api/movies/${imdbID}`)
         document.querySelector('.movieVotes').textContent = 'Antal röster: ' + movieData.count;
     })  
 .catch(error => console.error('Error:', error));
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const sendReviewButton = document.getElementById('send-review');
@@ -37,6 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
 fetch(`https://grupp6.dsvkurs.miun.se/api/movies/${imdbID}`)
   .then(response => response.json())
   .then(data => {
+    const reviews = data.reviews;
+
+    // Sort reviews by date in descending order
+    const sortedReviews = reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
     const userRatingsElement = document.querySelector('.user-ratings');
     userRatingsElement.innerHTML = '';
 
@@ -49,7 +56,7 @@ fetch(`https://grupp6.dsvkurs.miun.se/api/movies/${imdbID}`)
       userRatingsElement.innerHTML = '';
       data.reviews.forEach(appendReview);
 
-      // Hide the button
+      //Hide the button when all the reviews are shown
       showAllReviewsButton.style.display = 'none';
     });
 
@@ -58,10 +65,11 @@ fetch(`https://grupp6.dsvkurs.miun.se/api/movies/${imdbID}`)
       reviewElement.className = 'user-review';
 
       const h2Element = document.createElement('h2');
-      h2Element.textContent = `Namn:`;
+      h2Element.textContent = `Namn: ${review.reviewer}`;
       reviewElement.appendChild(h2Element);
 
-      if(review.name == null) {
+      //If the name is null, display "Anonym"
+      if(review.reviewer == null) {
         h2Element.textContent = `Namn: Anonym`;
       }
 
@@ -70,6 +78,7 @@ fetch(`https://grupp6.dsvkurs.miun.se/api/movies/${imdbID}`)
       ratingElement.textContent = `Betyg: ${review.score}/4`;
       reviewElement.appendChild(ratingElement);
 
+      //If the rating is null, display "Inget betyg"
       if(review.score == null) {
         ratingElement.textContent = `Betyg: Inget betyg`;
       }
@@ -78,6 +87,7 @@ fetch(`https://grupp6.dsvkurs.miun.se/api/movies/${imdbID}`)
       reviewTextElement.textContent = `Valfri text: ${review.review}`;
       reviewElement.appendChild(reviewTextElement);
 
+      //If the review is null, display "Inget omdöme"
       if(review.review == null) {
         reviewTextElement.textContent = `Valfri text: Inget omdöme`;
       }

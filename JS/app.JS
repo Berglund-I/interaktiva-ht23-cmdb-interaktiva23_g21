@@ -1,4 +1,4 @@
-/*Poster*/
+/*Get poster for top 10 movies and display in index.html*/
 fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   .then(response => response.json())
   .then(data => {
@@ -25,7 +25,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   })
 .catch(error => console.error('Error fetching movie list:', error));
 
-/*Filmtitel*/
+/*Get title for each movie in top 10 and display in index.html*/
 fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   .then(response => response.json())
   .then(data => {
@@ -54,7 +54,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
     })
 .catch(error => console.error('Fel vid hämtning av data:', error));
 
-/*Årtal*/
+/*Get year for all top 10 movies and display in index.html*/
 fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   .then(response => response.json())
   .then(data => {
@@ -68,7 +68,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
       .then(response => response.json())
       .then(omdbData => {
         if(omdbData.Year) {
-            const year = `Årtal: ` + omdbData.Year;
+            const year = `Utgivningsår: ` + omdbData.Year;
             
             const yearElement = yearElements[index];
             
@@ -82,7 +82,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
     })
 .catch(error => console.error('Fel vid hämtning av data:', error));
 
-/*Betyg*/
+/*Get rate for all top 10 movies and display in index.html*/
 fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   .then(response => response.json())
   .then(data => {
@@ -96,7 +96,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
       .then(response => response.json())
       .then(omdbData => {
         if(omdbData.cmdbScore) {
-            const rating = omdbData.cmdbScore + `/4`;
+            const rating = `Poäng: ` + omdbData.cmdbScore + `/4`;
             
             const ratingElement = ratingElements[index];
             
@@ -110,7 +110,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
     })
 .catch(error => console.error('Fel vid hämtning av data:', error));
 
-/*Sammanfattning*/
+/*Get plot for each movie in top 10 and display in index.html*/
 fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   .then(response => response.json())
   .then(data => {
@@ -137,14 +137,11 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
         });
     })
 .catch(error => console.error('Fel vid hämtning av data:', error));
-//-----------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------
-
 
 // Call the getActiveSelection function when the user clicks the search results div
 searchResults.addEventListener('click', getActiveSelection);
 
   
-/*rate*/
+
 
 
