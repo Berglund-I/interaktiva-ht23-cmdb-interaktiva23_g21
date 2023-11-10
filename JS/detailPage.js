@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Skicka recensionen till API:et
     // Betygsätt filmen
-    await rateMovie(imdbID, score);
+    
     await sendReviewToAPI(imdbID, reviewer, score, review);
     
   
@@ -44,24 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('submitReview').disabled = true;
   });
   
-  
-  async function rateMovie(imdbID, score) {
-    const rateUrl = `https://grupp6.dsvkurs.miun.se/api/movies/rate/${imdbID}/${score}`;
-    
-    return fetch(rateUrl, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log(`Filmen har blivit betygsatt med poängen ${score}.`);
-    })
-    .catch(error => {
-      console.error('Fel vid betygsättning av filmen:', error);
-    });
-  }
 });
 
 function createReviewObject(imdbID, reviewer, score, review){
@@ -104,6 +86,8 @@ async function sendReviewToAPI(imdbID, reviewer, score, review) {
 
 }
 
+
+
 //--------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
   const sendReviewButton = document.getElementById('send-review');
@@ -142,10 +126,10 @@ fetch(`https://grupp6.dsvkurs.miun.se/api/movies/${imdbID}`)
       reviewElement.className = 'user-review';
 
       const h2Element = document.createElement('h2');
-      h2Element.textContent = `Namn:`;
+      h2Element.textContent = `Namn: ${review.reviewer}`;
       reviewElement.appendChild(h2Element);
 
-      if(review.name == null) {
+      if(review.reviewer == null) {
         h2Element.textContent = `Namn: Anonym`;
       }
 
