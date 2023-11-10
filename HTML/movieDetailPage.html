@@ -30,8 +30,13 @@
                 <h1 class="movieTitle">Filmtitel</h1>
                 <p class="movieYear">Årtal: XXXX</p>
                 <p class="movieDescription">Handling: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
+                <p class="movieLength">Spellängd: 2 h</p>
                 <p class="movieRating">Poäng: Inget betyg från filmklubben finns för tillfället </p>
-                <p class="movieVotes">Antal röster: </p> 
+
+                
+
+                <p class="movieVotes">Antal röster: </p>
+
                 </p>
             </div>
         </section>
@@ -40,6 +45,7 @@
             <h1>Användarrecensioner</h1>
             
             <aside class="user-rating-form">
+
                 <form id="reviewForm">
                     <label for="name">Namn:</label>
                     <input type="text" id="name" required>
@@ -51,6 +57,7 @@
                     <textarea id="comment" required></textarea>
                     <br>
                     <button type="submit" id="submitReview">Skicka recension</button>
+
                 </form>
             
                 <div id="responseMessage"></div>
@@ -59,28 +66,16 @@
             <aside class="user-ratings">
                 <div class="user-review">
                     <h2>Användare 1:</h2>
-                    <div class="stars">
-                        <span class="filled-star">★</span>
-                        <span class="filled-star">★</span>
-                        <span class="filled-star">★</span>
-                        <span class="empty-star">☆</span>
-                        <span class="empty-star">☆</span>
-                    </div>
+                    <p class="movieRating">Betyg: X/4 </p>
                     <p>Recensionstext från användare 1.</p>
                 </div>
                 <div class="user-review">
                     <h2>Användare 2:</h2>
-                    <div class="stars">
-                        <span class="filled-star">★</span>
-                        <span class="filled-star">★</span>
-                        <span class="filled-star">★</span>
-                        <span class="filled-star">★</span>
-                        <span class="filled-star">★</span>
-                    </div>
+                    <p class="movieRating">Betyg: X/4 </p>
                     <p>Recensionstext från användare 2.</p>
                 </div>
-                <a href="#" id="show-more-reviews">Visa fler användarrecensioner</a>
             </aside>
+            <a href="#" id="show-more-reviews">Visa alla användarrecensioner</a>
         </section>
         
         <footer>
