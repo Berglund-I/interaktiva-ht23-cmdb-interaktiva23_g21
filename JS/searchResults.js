@@ -159,15 +159,5 @@ document.addEventListener('DOMContentLoaded', () => {
     //---------------------------------------------------------------------------------------- 
 // Filter function
 
-const showFiltersButton = document.getElementById('showFiltersButton');
 
-showFiltersButton.addEventListener('click', function() {
-  // Plats för din kod som ska köras när knappen klickas på
-  // Till exempel, anropa en funktion för att utföra filtreringen.
-
-  const genreSelect = document.getElementById('genre');
-  const selectedGenre = genreSelect.value;
-  console.log('Vald genre:', selectedGenre);
-
-});
 

@@ -32,7 +32,11 @@
                 <p class="movieDescription">Handling: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
                 <p class="movieLength">Spellängd: 2 h</p>
                 <p class="movieRating">Poäng: Inget betyg från filmklubben finns för tillfället </p>
+
+                
+
                 <p class="movieVotes">Antal röster: </p>
+
                 </p>
             </div>
         </section>
@@ -41,20 +45,22 @@
             <h1>Användarrecensioner</h1>
             
             <aside class="user-rating-form">
-                <h2>Skriv din recension på filmen</h2>
-                <form method="post" id="review-form">
-                    <label for="uname">Namn:</label>
-                    <input type="text" id="fname" name="firstname" required>
-                    <label for="recension">Valfri text:</label>
-                    <input type="text" id="recension" name="recension" required>
-                    <div class="rating">
-                        <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
-                        <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
-                        <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
-                        <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
-                    </div>
-                    <a href="#" id="send-review" class="buttonGold-ReadMore">Läs mer</a>
+
+                <form id="reviewForm">
+                    <label for="name">Namn:</label>
+                    <input type="text" id="name" required>
+                    <br>
+                    <label for="rating">Poäng:</label>
+                    <input type="number" id="rating" min="1" max="4" required>
+                    <br>
+                    <label for="comment">Kommentar:</label>
+                    <textarea id="comment" required></textarea>
+                    <br>
+                    <button type="submit" id="submitReview">Skicka recension</button>
+
                 </form>
+            
+                <div id="responseMessage"></div>
             </aside>
 
             <aside class="user-ratings">
