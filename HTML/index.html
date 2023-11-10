@@ -8,7 +8,6 @@
         <script src="https://kit.fontawesome.com/74e6607f1f.js" crossorigin="anonymous"></script>
         <script src="../JS/app.JS"></script>
         <script src="../JS/searchResults.js"></script>
-
     </head>
     <body>
         <header>
@@ -26,25 +25,25 @@
         <div class="movies"></div>
         
         <main>
-            
             <section id="search">
-                <h2>Sök efter filmer</h2>
+                <h2>Sök efter filmer:</h2>
                 <form id="search-form" action="searchResults.html" method="get">
                   <input id="search-input" type="text" name="search" placeholder="Sök efter filmer...">
                   <input type="submit" value="Sök">
                 </form>
                 <div id="suggestions"></div>
-              </section>
-           
-            
+            </section>
+    
             <section id="top-list">
                 <h1>Topplistan</h1>
                 <!-- Container with all the top movies -->
                     <div class="top-list-container">
 
                         <div class="movieBest-rated gold-border">
-                            <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="jaws hajen">
                             <i class="fa-solid fa-1 fa-beat" style="color: #b69121;"></i>
+                            <div class="moviePosterSize">
+                                <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="Movie poster">
+                            </div>
                             <h3 class="movieTitle">Title</h3>
                             <p class="movieYear">Årtal: XXXX</p>
                             <p class="movieRating">Betyg: X/4 </p>
@@ -53,98 +52,109 @@
                         </div>
 
                         <div class="movieSecondBest-rated silver-border">
-                            <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="jaws hajen">
                             <i class="fa-solid fa-2" style="color: #adb5bd;"></i>
+                            <div class="moviePosterSize">
+                                <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="Movie poster">
+                            </div>
                             <h3 class="movieTitle" >Title</h3>
                             <p class="movieYear">Årtal: XXXX</p>
                             <p class="movieRating">Betyg: X/4 </p>
-                            <button class="buttonGold">Betygsätt</button>
                             <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
                             <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
                         </div>
                         
                         <div class="movieThirdBest-rated bronze-border">
-                            <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="jaws hajen">
                             <i class="fa-solid fa-3" style="color: brown;"></i>
+                            <div class="moviePosterSize">
+                                <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="Movie poster">
+                            </div>
                             <h3 class="movieTitle">Title</h3>
                             <p class="movieYear">Årtal: XXXX</p>
                             <p class="movieRating">Betyg: X/4 </p>
-                            <button class="buttonGold">Betygsätt</button>
                             <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
                             <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
                         </div>
                     
-                    <div class="movieTopTenBest-rated">
-                        <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3 class="movieTitle">Title</h3>
-                        <p class="movieYear">Årtal: XXXX</p>
-                        <p class="movieRating">Betyg: X/4 </p>
-                        <button class="buttonGold">Betygsätt</button>
-                        <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
-                        <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
+                        <div class="movieTopTenBest-rated">
+                            <span class="movieNumber">4</span>
+                            <div class="moviePosterSize">
+                                <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="Movie poster">
+                            </div>
+                            <h3 class="movieTitle">Title</h3>
+                            <p class="movieYear">Årtal: XXXX</p>
+                            <p class="movieRating">Betyg: X/4 </p>
+                            <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
+                            <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
+                        </div>
+                        <div class="movieTopTenBest-rated">
+                            <span class="movieNumber">5</span>
+                            <div class="moviePosterSize">
+                                <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="Movie poster">
+                            </div>
+                            <h3 class="movieTitle">Title</h3>
+                            <p class="movieYear">Årtal: XXXX</p>
+                            <p class="movieRating">Betyg: X/4 </p>
+                            <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
+                            <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
+                        </div>
+                        <div class="movieTopTenBest-rated">
+                            <span class="movieNumber">6</span>
+                            <div class="moviePosterSize">
+                                <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="Movie poster">
+                            </div>
+                            <h3 class="movieTitle">Title</h3>
+                            <p class="movieYear">Årtal: XXXX</p>
+                            <p class="movieRating">Betyg: X/4 </p>
+                            <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
+                            <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
+                        </div>
+                            <div class="movieTopTenBest-rated">
+                            <span class="movieNumber">7</span>
+                            <div class="moviePosterSize">
+                                <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="Movie poster">
+                            </div>
+                            <h3 class="movieTitle">Title</h3>
+                            <p class="movieYear">Årtal: XXXX</p>
+                            <p class="movieRating">Betyg: X/4 </p>
+                            <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
+                            <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
+                        </div>
+                        <div class="movieTopTenBest-rated">
+                            <span class="movieNumber">8</span>
+                            <div class="moviePosterSize">
+                                <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="Movie poster">
+                            </div>
+                            <h3 class="movieTitle">Title</h3>
+                            <p class="movieYear">Årtal: XXXX</p>
+                            <p class="movieRating">Betyg: X/4 </p>
+                            <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
+                            <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
+                        </div>
+                        <div class="movieTopTenBest-rated">
+                            <span class="movieNumber">9</span>
+                            <div class="moviePosterSize">
+                                <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="Movie poster">
+                            </div>
+                            <h3 class="movieTitle">Title</h3>
+                            <p class="movieYear">Årtal: XXXX</p>
+                            <p class="movieRating">Betyg: X/4</p>
+                            <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
+                            <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
+                        </div>
+                        <div class="movieTopTenBest-rated">
+                            <span class="movieNumber">10</span>
+                            <div class="moviePosterSize">
+                                <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="Movie poster">
+                            </div>
+                            <h3 class="movieTitle">Title</h3>
+                            <p class="movieYear">Årtal: XXXX</p>
+                            <p class="movieRating">Betyg: X/4 </p>
+                            <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
+                            <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
+                        </div>    
                     </div>
-                    <div class="movieTopTenBest-rated">
-                        <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3 class="movieTitle">Title</h3>
-                        <p class="movieYear">Årtal: XXXX</p>
-                        <p class="movieRating">Betyg: X/4 </p>
-                        <button class="buttonGold">Betygsätt</button>
-                        <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
-                        <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3 class="movieTitle">Title</h3>
-                        <p class="movieYear">Årtal: XXXX</p>
-                        <p class="movieRating">Betyg: X/4 </p>
-                        <button class="buttonGold">Betygsätt</button>
-                        <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
-                        <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3 class="movieTitle">Title</h3>
-                        <p class="movieYear">Årtal: XXXX</p>
-                        <p class="movieRating">Betyg: X/4 </p>
-                        <button class="buttonGold">Betygsätt</button>
-                        <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
-                        <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3 class="movieTitle">Title</h3>
-                        <p class="movieYear">Årtal: XXXX</p>
-                        <p class="movieRating">Betyg: X/4 </p>
-                        <button class="buttonGold">Betygsätt</button>
-                        <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
-                        <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3 class="movieTitle">Title</h3>
-                        <p class="movieYear">Årtal: XXXX</p>
-                        <p class="movieRating">Betyg: X/4</p>
-                        <button class="buttonGold">Betygsätt</button>
-                        <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
-                        <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
-                    </div>
-                    <div class="movieTopTenBest-rated">
-                        <img class="movie-frontImage" src="../IMAGES/jaws.jpg" alt="jaws hajen">
-                        <h3 class="movieTitle">Title</h3>
-                        <p class="movieYear">Årtal: XXXX</p>
-                        <p class="movieRating">Betyg: X/4 </p>
-                        <button class="buttonGold">Betygsätt</button>
-                        <p class="movieDescription">Beskrivning: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis urna ac magna sodales, in vehicula metus dictum.</p>
-                        <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
-                    </div>
-                    
-    
-                    
-                </div>
-                
                 <!-- Show more button -->
-                <a href="#" id="show-more">Visa fler filmer</a>
-                
+                    <a href="#" id="show-more">Visa fler filmer</a>    
             </section>
         </main>
 
@@ -156,9 +166,6 @@
                 <i class="fa-brands fa-instagram"></i>
                 <i class="fa-brands fa-tiktok"></i>
             </div> 
-
         </footer>
-
-    </body>
-        
+    </body>    
 </html>

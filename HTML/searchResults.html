@@ -6,9 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link type="text/css" rel="stylesheet" href="../CSS/stylesheet.css">
         <script src="https://kit.fontawesome.com/74e6607f1f.js" crossorigin="anonymous"></script>
-        
-        
-        
+        <script src="../JS/app.JS"></script>
+        <script src="../JS/searchResults.js"></script>
     </head>
     <body>
         <header>
@@ -31,81 +30,79 @@
               <input type="submit" value="Sök">
             </form>
             <div id="suggestions"></div>
-          </section>
+        </section>
 
-          <aside id="filter">
-                  <h2>Filter</h2>
-                  <form>
-                      <label for="genre">Sortera efter</label>
-                      <select id="genre" name="genre">
-                              <option value="nothing"> </option>
-                              <option value="newest">Nyast</option>
-                              <option value="oldest">Äldst</option>
-                              <option value="popularity">Popularitet</option>
-                              <option value="recommendedMovies">Rekommenderade filmer</option>
-                          </select>
+        <aside id="filter">
+            <h2>Filter</h2>
+            <form>
+                <label for="genre">Sortera efter</label>
+                <select id="genre" name="genre">
+                        <option value="nothing"> </option>
+                        <option value="newest">Nyast</option>
+                        <option value="oldest">Äldst</option>
+                        <option value="popularity">Popularitet</option>
+                        <option value="recommendedMovies">Rekommenderade filmer</option>
+                    </select>
       
-                          <label for="genre">Genrer</label>
-                          <select id="genre" name="genre">
-                              <option value="all">Alla</option>
-                              <option value="drama">Drama</option>
-                              <option value="comedy">Komedi</option>
-                              <option value="thriller">Thriller</option>
-                              <option value="horror">Skräck</option>
-                              <option value="action">Action</option>
-                              <option value="kidz">Barn & Familj</option>
-                              <option value="filmPearls">Filmpärlor</option>
-                              <option value="romance">Romantik</option>
-                              <option value="detective">Deckare</option>
-                              <option value="adventure">Äventyr</option>
-                              <option value="sci-fi">Sci-Fi</option>
-                              <option value="documentary">Dokumentär</option>
-                              <option value="music">Musik</option>
-                              <option value="warFilms">Krigsfilmer</option>
-                              <option value="western">Western</option>
-                              <option value="cult">Kult</option>
-                              <option value="anime">Anime</option>
-                          </select>
+                    <label for="genre">Genrer</label>
+                    <select id="genre" name="genre">
+                        <option value="all">Alla</option>
+                        <option value="drama">Drama</option>
+                        <option value="comedy">Komedi</option>
+                        <option value="thriller">Thriller</option>
+                        <option value="horror">Skräck</option>
+                        <option value="action">Action</option>
+                        <option value="kidz">Barn & Familj</option>
+                        <option value="filmPearls">Filmpärlor</option>
+                        <option value="romance">Romantik</option>
+                        <option value="detective">Deckare</option>
+                        <option value="adventure">Äventyr</option>
+                        <option value="sci-fi">Sci-Fi</option>
+                        <option value="documentary">Dokumentär</option>
+                        <option value="music">Musik</option>
+                        <option value="warFilms">Krigsfilmer</option>
+                        <option value="western">Western</option>
+                        <option value="cult">Kult</option>
+                        <option value="anime">Anime</option>
+                    </select>
                           
-                          <label for="scoreCMDb">CMDb Betyg</label>
-                          <div class="range-container">
-                              <span class="range-label">1</span>
-                              <span class="range-label">2</span>
-                              <span class="range-label">3</span>
-                              <span class="range-label">4</span>
-                              <input type="range" id="scoreCMDb" name="scoreCMDb" min="0" max="4" step="1" value="4" />
-                          </div>
+                    <label for="scoreCMDb">CMDb Betyg</label>
+                    <div class="range-container">
+                        <span class="range-label">1</span>
+                        <span class="range-label">2</span>
+                        <span class="range-label">3</span>
+                        <span class="range-label">4</span>
+                        <input type="range" id="scoreCMDb" name="scoreCMDb" min="0" max="4" step="1" value="4" />
+                    </div>
                           
-                          <div class="year-filter">
-                              <label for="year-range">Välj utgivningsår:</label>
-                              <input type="range" id="year-range" name="year-range" min="1900" max="2023" step="1" value="2023" />
-                              <div class="range-values">
-                                  <span id="start-year-value">1900</span> - <span id="end-year-value">2023</span>
-                              </div>
-                          </div>
+                    <div class="year-filter">
+                        <label for="year-range">Välj utgivningsår:</label>
+                        <input type="range" id="year-range" name="year-range" min="1900" max="2023" step="1" value="2023" />
+                        <div class="range-values">
+                            <span id="start-year-value">1900</span> - <span id="end-year-value">2023</span>
+                        </div>
+                    </div>
                           
-                          <div class="length-filter">
-                              <label for="length-range">Välj filmens längd:</label>
-                              <div class="range-values">
-                                  <span id="min-length">0 min</span> - <span id="max-length">240 min</span>
-                              </div>
-                              <input type="range" id="length-range" name="length-range" min="0" max="240" step="10" value="240" />
-                          </div>
+                    <div class="length-filter">
+                        <label for="length-range">Välj filmens längd:</label>
+                        <div class="range-values">
+                            <span id="min-length">0 min</span> - <span id="max-length">240 min</span>
+                        </div>
+                        <input type="range" id="length-range" name="length-range" min="0" max="240" step="10" value="240" />
+                    </div>
                           
-                          <button id="earseFiltersButton">Rensa</button>
-                          <button id="showFiltersButton">Visa</button>
-  
-                  </form>
-          </aside>
+                    <button id="earseFiltersButton">Rensa</button>
+                    <button id="showFiltersButton">Visa</button>
+            </form>
+        </aside>
           
-          <main>
-              <div id="search-results">
-                <h2 id="searchResults"></h2>
+        <main>
+            <div id="search-results">
+            <h2 id="searchResults"></h2>
               <!-- Search results go here -->
-              <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
-              </div>
-          </main>
-
+            <a href="movieDetailPage.html"class="buttonGold-ReadMore">Läs mer</a>
+            </div>
+        </main>
 
         <footer>
             <p>&copy; 2023 Din Webbplats</p>
@@ -115,11 +112,6 @@
                 <i class="fa-brands fa-instagram"></i>
                 <i class="fa-brands fa-tiktok"></i>
             </div> 
-
         </footer>
-
-        <script src="../JS/app.JS"></script>
-        <script src="../JS/searchResults.js"></script>
     </body>
-
 </html>
