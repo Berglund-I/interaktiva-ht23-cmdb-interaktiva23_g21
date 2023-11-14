@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Lås knappen efter att recensionen har skickats
     document.getElementById('submitReview').disabled = true;
+    location.reload();
   });
   
 });
