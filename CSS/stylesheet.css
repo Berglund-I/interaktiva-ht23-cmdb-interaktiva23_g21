@@ -58,7 +58,6 @@ header h1 {
 }
 
 #search input::placeholder {
-    /* Rätt syntax för placeholder */
     color: #fff;
 }
 
@@ -71,7 +70,6 @@ header h1 {
 #suggestions {
     position: absolute;
     top: 100%;
-    /* Placera rutan precis under sökrutan */
     align-items: center;
     width: 58%;
     background-color: #461220;
@@ -79,46 +77,33 @@ header h1 {
     max-height: 200px;
     overflow-y: auto;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Korrekt rgba-värde */
 }
 
 #suggestions .suggestion {
     display: flex;
-    /* Använd flexbox för att placera bild och titel bredvid varandra */
     border: 1px solid #ddd;
-    /* Lägg till en tunn ram runt varje sökförslag */
     margin: 5px 0;
-    /* Justera marginalen över och under varje sökförslag */
     padding: 10px;
-    /* Lägg till ett mellanrum runt innehållet i varje sökförslag */
 }
 
 #suggestions .suggestion img {
     width: 100px;
-    /* Justera bredden på bilderna efter dina behov */
     height: auto;
-    /* Anpassa höjden proportionellt */
     order: 2;
 }
 
 #suggestions .suggestion .title {
     flex: 1;
     font-size: 24px;
-    /* Justera textstorleken efter dina behov */
     color: #fff;
-    /* Ändra textfärgen efter dina önskemål */
     order: 1;
 }
 
-/* Använd rätt klass för hover-effekten */
 #suggestions .suggestion:hover {
     background-color: #69212d;
     transition: backround-color 0.3s;
 }
 
-
-
-/* Navigation meny style */
 nav {
     background-color: #461220;
     padding: 10px;
@@ -167,26 +152,6 @@ h2 {
     font-size: 33px;
 }
 
-/*Flexbox to Top movies */
-/*.top-list-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; /* Wrap to handle if there are too many movies to fit on a row */
-/*color: #ffffff;
-    text-align: left;
-    background-color: #461220;
-    margin-bottom: 10px;
-}
-
-/* Adjust the size of the individual movies */
-/*.movieBest-rated,
-.movieSecondBest-rated,
-.movieThirdBest-rated,
-.movieTopTenBest-rated {
-    width: 300px; 
-    color: white;
-}*/
-
 .top-list-container {
     display: flex;
     flex-direction: row;
@@ -220,13 +185,9 @@ h2 {
 .movieTitle {
     width: 100%;
     height: 50px;
-    /* Adjust this value as needed */
     overflow: hidden;
-    /* Hide any text that exceeds the height */
     text-overflow: ellipsis;
-    /* Add an ellipsis (...) when the text overflows */
     white-space: nowrap;
-    /* Prevent the text from wrapping onto the next line */
 }
 
 .movieDescription {
@@ -272,7 +233,7 @@ h2 {
 
 /*The numbers to the top 10 movies, from 4-10*/
 .movieNumber {
-    color: black;
+    color: white;
     font-size: 41.5px;
 }
 
@@ -347,8 +308,8 @@ h2 {
 .buttonGold-ReadMore {
     display: inline-block;
     padding: 3px 7px;
-    background-color: #b69121;
-    color: #fff;
+    background-color: #ffe0b2;
+    color: #461220;
     text-decoration: none;
     border: none;
     border-radius: 5px;
@@ -414,8 +375,8 @@ h2 {
     display: block;
     text-align: center;
     padding: 10px;
-    background-color: #e85d04;
-    color: #fff;
+    background-color: #ffe0b2;
+    color: #461220;
     text-decoration: none;
     margin: auto auto;
     width: auto;
@@ -426,6 +387,8 @@ h2 {
 #show-more:hover {
     background-color: #dc2f02;
 }
+
+
 
 /* Contact form style */
 #information-content {
@@ -473,7 +436,7 @@ select {
 
 input[type="submit"] {
     width: 100%;
-    background-color: #FFE0B2;
+    background-color: #ffe0b2;
     color: #461220;
     padding: 10px;
     margin: 10px 0;
@@ -544,58 +507,16 @@ p {
     color: #fff;
 }
 
-/* Styling for the video player */
-video {
-    width: 100%;
-    max-width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/*style for the other websites ratings*/
+.otherwebsiteratings{
+    background-color: #461220;
+    color: #fff;
+    padding: 20px;
+    border: black 2px solid; 
 }
 
-/* Styling for controller */
-video::-webkit-media-controls {
-    color: white;
-    border-radius: 5px;
-}
-
-/* Styling for the timer */
-video::-webkit-media-controls-current-time-display,
-video::-webkit-media-controls-time-remaining-display {
-    color: white;
-}
-
-/* Styling for buttons (play, pause, volume, full screen) */
-video::-webkit-media-controls-play-button,
-video::-webkit-media-controls-pause-button,
-video::-webkit-media-controls-mute-button,
-video::-webkit-media-controls-fullscreen-button {
-    background-color: #e85d04;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-}
-
-/* Styling for the video progress bar */
-video::-webkit-media-controls-seek-back-button,
-video::-webkit-media-controls-seek-forward-button {
-    color: white;
-}
-
-video::-webkit-media-controls-progress-bar {
-    background-color: #e85d04;
-}
-
-video::-webkit-media-controls-volume-slider {
-    width: 60px;
-    /* Ändra volymskynkarens bredd (anpassa efter behov) */
-    height: 8px;
-    /* Ändra volymskynkarens höjd (anpassa efter behov) */
-    border-radius: 5px;
-    /* Runda hörnen på volymskynkaren */
-    background-color: #e85d04;
-    /* Ändra bakgrundsfärgen för volymskynkaren */
+.otherwebsiteratings h1{
+    margin-bottom: 10px;
 }
 
 /* Style for User Reviews */
@@ -603,7 +524,7 @@ video::-webkit-media-controls-volume-slider {
     background-color: #461220;
     color: #fff;
     padding: 20px;
-
+    border: black 2px solid;
 }
 
 .user-ratings {
@@ -675,8 +596,8 @@ video::-webkit-media-controls-volume-slider {
     display: block;
     text-align: center;
     padding: 10px;
-    background-color: #e85d04;
-    color: #fff;
+    background-color: #ffe0b2;
+    color: #461220;
     text-decoration: none;
     margin: auto auto;
     width: auto;
