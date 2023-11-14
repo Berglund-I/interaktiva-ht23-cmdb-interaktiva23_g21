@@ -11,6 +11,7 @@ fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f`)
     document.querySelector('.movieYear').textContent =  'Utgivningsår: ' + movieData.Year;
     document.querySelector('.movieDescription').textContent = 'Beskrivning: ' + movieData.Plot;
     document.querySelector('.movieLength').textContent = 'Spellängd: ' + movieData.Runtime;
+    document.querySelector('.movieGenre').textContent = 'Genre: ' + movieData.Genre;
   })
 .catch(error => console.error('Error:', error));
 
@@ -22,6 +23,39 @@ fetch(`https://grupp6.dsvkurs.miun.se/api/movies/${imdbID}`)
         document.querySelector('.movieVotes').textContent = 'Antal röster: ' + movieData.count;
     })  
 .catch(error => console.error('Error:', error));
+
+/*Show ratings from other websites*/
+fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f`)
+  .then(response => response.json())
+  .then(movieData => {
+    // Get references to the HTML elements
+    var firstReview = document.querySelector('.firstreview');
+    var secondReview = document.querySelector('.secondreview');
+    var thirdReview = document.querySelector('.thirdreview');
+
+    movieData.Ratings.forEach(rating => {
+      switch (rating.Source) {
+        case "Internet Movie Database":
+          firstReview.textContent = `${rating.Source}: ${rating.Value}`;
+          break;
+        case "Rotten Tomatoes":
+          secondReview.textContent = `${rating.Source}: ${rating.Value}`;
+          break;
+        case "Metacritic":
+          thirdReview.textContent = `${rating.Source}: ${rating.Value}`;
+          break;
+        default:
+          // If the source doesn't match any of the expected ones, ignore it or handle it appropriately
+          break;
+      }
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching movie data:', error);
+  });
+
+
+
 
 //-------------------------------------------------------------------------------------------------------
 //Ratingsystem 
@@ -110,6 +144,7 @@ fetch(`https://grupp6.dsvkurs.miun.se/api/movies/${imdbID}`)
 
     // Sort reviews by date in descending order
     const sortedReviews = reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+
     const userRatingsElement = document.querySelector('.user-ratings');
     userRatingsElement.innerHTML = '';
 
