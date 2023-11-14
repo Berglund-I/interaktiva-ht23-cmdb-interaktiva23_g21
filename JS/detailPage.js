@@ -55,32 +55,34 @@ fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f`)
   });
 
 
-
-
 //-------------------------------------------------------------------------------------------------------
 //Ratingsystem 
+//When the user makes a user review on the movie
 document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const imdbID = urlParams.get('imdbID');
+  const reviewGiven = localStorage.getItem(`review_given${imdbID}`);
+  
+  if (reviewGiven) {
+    document.getElementById('submitReview').disabled = true;
+  }
   
   document.getElementById('reviewForm').addEventListener('submit', async function (e) {
     e.preventDefault();
-    const urlParams = new URLSearchParams(window.location.search);
-    const imdbID = urlParams.get('imdbID');
     const reviewer = document.getElementById('name').value;
     const score = document.getElementById('rating').value;
     const review = document.getElementById('comment').value;
-  
-    // Skicka recensionen till API:et
-    // Betygsätt filmen
-    
+
     await sendReviewToAPI(imdbID, reviewer, score, review);
     
-  
-    // Lås knappen efter att recensionen har skickats
+    localStorage.setItem(`review_given${imdbID}`,true);
     document.getElementById('submitReview').disabled = true;
+    location.reload();
+
   });
-  
 });
 
+/*Creates the objects*/
 function createReviewObject(imdbID, reviewer, score, review){
   return {
     imdbID: imdbID,
@@ -120,8 +122,6 @@ async function sendReviewToAPI(imdbID, reviewer, score, review) {
   });
 
 }
-
-
 
 //--------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {

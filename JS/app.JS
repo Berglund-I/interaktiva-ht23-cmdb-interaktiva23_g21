@@ -25,6 +25,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   })
 .catch(error => console.error('Error fetching movie list:', error));
 
+
 /*Get title for each movie in top 10 and display in index.html*/
 fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   .then(response => response.json())
@@ -136,81 +137,9 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
             .catch(error => console.error('Fel vid hämtning av OMDB-data:', error));
         });
     })
-.catch(error => console.error('Fel vid hämtning av data:', error));
-
-// Call the getActiveSelection function when the user clicks the search results div
-searchResults.addEventListener('click', getActiveSelection);
+.catch(error => console.error('Fel vid hämtning av data:', error)); 
 
 //------------------------------------------------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
-    .then(response => response.json())
-    .then(data => {
-      const ratingForm = document.getElementById('ratingForm');
-      const submitReviewButton = document.getElementById('submitRating');
-      const ratingOnlyInput = document.getElementById('ratingOnly');
-
-      ratingForm.addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        // Get the selected movie
-        const selectedMovieIndex = ratingOnlyInput.dataset.selectedMovieIndex;
-        const selectedMovie = data.movies[selectedMovieIndex];
-
-        const imdbID = selectedMovie.imdbID;
-        const score = ratingOnlyInput.value;
-
-        await rateMovie(imdbID, score);
-
-        // Disable the button after the review has been sent
-        submitReviewButton.disabled = true;
-      });
-    })
-    .catch(error => console.error('Fel vid hämtning av data:', error));
-});
-async function rateMovie(imdbID, score) {
-  const rateUrl = `https://grupp6.dsvkurs.miun.se/api/movies/rate/${imdbID}/${score}`;
-
-  return fetch(rateUrl, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(response => response.json())
-  .then(data => {
-    const responseMessageElement = document.getElementById('responseMessageToRating');
-    if (responseMessageElement) {
-        responseMessageElement.textContent = 'Filmen har fått poäng!';
-        console.log(`Filmen har blivit betygsatt med poängen ${score}.`);
-    }
-  })
-  .catch(error => {
-    console.error('Fel vid betygsättning av filmen:', error);
-  });
-}
-
-
-
-
-
-/*async function rateMovie(imdbID, score) {
-  const starRateUrl = 'https://grupp6.dsvkurs.miun.se/api/movies/rate/${imdbID}/${score}';
-
-  return fetch(rateUrl, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Filmen har blivit betygsatt med poängen ${score}.');
-  })
-  .catch(error => {
-    console.error('Fel vid betygsättning av filmen:', error);
-  });
-}*/
 
 
 
