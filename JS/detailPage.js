@@ -57,7 +57,7 @@ function createReviewObject(imdbID, reviewer, score, review){
 }
 
 async function sendReviewToAPI(imdbID, reviewer, score, review) {
-  //Skapa ett nytt object istället
+  
   const newReview = createReviewObject(imdbID, reviewer, score, review);
   
   const reviewUrl = 'https://grupp6.dsvkurs.miun.se/api/movies/review';
