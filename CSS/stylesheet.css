@@ -34,6 +34,7 @@ header h1 {
     font-size: 24px;
 }
 
+/*-----------------------------------------------------------------------------------------------------------*/
 /* Searchbar style */
 #search {
     background-color: #461220;
@@ -104,6 +105,7 @@ header h1 {
     transition: backround-color 0.3s;
 }
 
+/*----------------------------------------------------------------------------------------------------------------------*/
 nav {
     background-color: #461220;
     padding: 10px;
@@ -140,16 +142,11 @@ h2 {
     margin-bottom: 10px;
 }
 
-/*Heading for the Top movies*/
+/*--------------------------------------------------------------------------------------------------------------*/
+/*Top movies*/
 #top-list {
     background-color: #461220;
     color: #fff;
-}
-
-#top-list h1 {
-    padding-bottom: 5px;
-    text-align: left;
-    font-size: 33px;
 }
 
 .top-list-container {
@@ -237,74 +234,11 @@ h2 {
     font-size: 41.5px;
 }
 
-/* Colors to the rate buttons */
-.buttonGold {
-    background-color: #b69121;
-    display: inline-block;
-    padding: 3px 7px;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.buttonSilver {
-    background-color: #adb5bd;
-    display: inline-block;
-    padding: 3px 7px;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.buttonBronze {
-    background-color: #9e4936;
-    display: inline-block;
-    padding: 3px 7px;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.buttonOrdinary {
-    background-color: #e85d04;
-    display: inline-block;
-    padding: 3px 7px;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Hover-effect for rate buttons */
-.buttonGold:hover {
-    background-color: #765e16;
-}
-
-.buttonSilver:hover {
-    background-color: #81868c;
-}
-
-.buttonBronze:hover {
-    background-color: #63320e;
-}
-
-.buttonOrdinary:hover {
-    background-color: #dc2f02;
-}
-
 
 /* Read more about the movie buttons */
+
+/*The first three buttons were meant to be different colors for their placement and the ones that weren't 
+top 3 would be one color but we then changed that later and that's why the buttons have gold in the name*/
 .buttonGold-ReadMore {
     display: inline-block;
     padding: 3px 7px;
@@ -317,58 +251,11 @@ h2 {
     cursor: pointer;
 }
 
-.buttonSilver-ReadMore {
-    display: inline-block;
-    padding: 3px 7px;
-    background-color: #adb5bd;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.buttonBronze-ReadMore {
-    display: inline-block;
-    padding: 3px 7px;
-    background-color: #9e4936;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.buttonOrdinary-ReadMore {
-    display: inline-block;
-    padding: 3px 7px;
-    background-color: #e85d04;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
 /* Hover-effect for read more about the movie buttons */
 .buttonGold-ReadMore:hover {
-    background-color: #765e16;
+    background-color: #b6a07e;
 }
 
-.buttonSilver-ReadMore:hover {
-    background-color: #81868c;
-}
-
-.buttonBronze-ReadMore:hover {
-    background-color: #63320e;
-}
-
-.buttonOrdinary-ReadMore:hover {
-    background-color: #dc2f02;
-}
 
 /* Style for show more button */
 #show-more {
@@ -385,11 +272,11 @@ h2 {
 }
 
 #show-more:hover {
-    background-color: #dc2f02;
+    background-color: #b6a07e;
 }
 
 
-
+/*----------------------------------------------------------------------------------------------------------------*/
 /* Contact form style */
 #information-content {
     background-color: #69212d;
@@ -447,9 +334,10 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #dc2f02;
+    background-color: #b6a07e;
 }
 
+/*----------------------------------------------------------------------------------------------------------------------*/
 /* Style for movie information */
 #movie-information {
     display: flex;
@@ -468,46 +356,47 @@ p {
     color: #fff;
 }
 
-.rating {
-    color: #ccc;
-}
-
-.gray-star {
-    font-size: 20px;
-}
-
-.rating-distribution {
-    border: 1px solid #ccc;
+/*Send review button*/
+#submitReview{
+    width: 40%;
+    background-color: #ffe0b2;
+    color: #461220;
     padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+#submitReview:hover {
+    background-color: #b6a07e;
+}
+
+#submitReview:disabled {
+    background-color: #b6a07e; 
+    color: #461220; 
+    cursor: not-allowed; 
+}
+
+/*Rating square*/
+#rating {
+    width: 50px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ffe0b2;
+    border-radius: 5px;
     background-color: #69212d;
     color: #fff;
 }
 
-.bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
+/* Rating square hover effect */
+#rating:hover,
+#rating:focus {
+    border-color: #b6a07e;
 }
 
-.rating {
-    font-weight: bold;
-    color: #fff;
-}
-
-.fill {
-    background-color: #e85d04;
-    height: 20px;
-    color: #fff;
-    text-align: center;
-}
-
-.percentage {
-    font-weight: bold;
-    color: #fff;
-}
-
-/*style for the other websites ratings*/
+/*Style for the other websites ratings*/
 .otherwebsiteratings{
     background-color: #461220;
     color: #fff;
@@ -533,32 +422,6 @@ p {
     padding: 20px;
 }
 
-/* Styling for star rating */
-.rating {
-    display: flex;
-}
-
-.rating input {
-    display: none;
-}
-
-.rating label {
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.rating label::before {
-    content: "\2605";
-    /* Star symbol */
-    padding: 5px;
-    color: #ccc;
-}
-
-.rating input:checked+label::before {
-    color: #ffcc00;
-    /* Color for marked stars */
-}
-
 /* The style of other people's reviews of the film*/
 .user-review {
     margin-bottom: 20px;
@@ -572,23 +435,6 @@ p {
 
 .user-review h2 {
     font-weight: bold;
-}
-
-.stars {
-    color: #fcd02a;
-    /* Color for marked stars */
-}
-
-.filled-star {
-    font-size: 20px;
-    /* Size for the marked stars */
-}
-
-.empty-star {
-    font-size: 20px;
-    /* Size for the empty stars  */
-    color: #ccc;
-    /* Color for the empty stars  */
 }
 
 /* Show more reviews button*/
@@ -606,24 +452,52 @@ p {
 }
 
 #show-more-reviews:hover {
-    background-color: #dc2f02;
+    background-color: #b6a07e;
 }
 
+/*-------------------------------------------------------------------------------------*/
 /* Filter column for search results*/
 #filter {
     position: absolute;
-    top: 70%;
-    /* The distance from the top, change to the height of the header */
+    top: 90%;
     left: 0;
-    /* Position the filter section to the right */
     width: 200px;
-    /* Enter desired width here */
     height: 100%;
     background-color: #461220;
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
-    /* Add vertical scroll function if filter options get too long */
+}
+
+/*Filter buttons*/
+#earseFiltersButton,
+#showFiltersButton {
+    padding: 5% 10%;
+    font-size: 14px;
+    cursor: pointer;
+    
+    border-radius: 5px;
+    margin-right: 1%;
+    transition: background-color 0.3s ease;
+}
+
+/*Earse filter button */
+#earseFiltersButton {
+    background-color: #ffe0b2; 
+    color: #461220; 
+}
+
+/*Show filter button */
+#showFiltersButton {
+    background-color: #ffe0b2; 
+    color: #461220;
+    
+}
+
+/* Hover effect for both filter buttons */
+#earseFiltersButton:hover,
+#showFiltersButton:hover {
+    background-color: #b6a07e; 
 }
 
 .range-label {
@@ -642,6 +516,7 @@ p {
     text-align: left;
 }
 
+/*The div where the movie elements are*/
 .search-results>div {
     margin: 10px;
     padding: 10px;
@@ -661,9 +536,9 @@ p {
 
 .noResultsMessage {
     text-align: center;
-
 }
 
+/*----------------------------------------------------------------------------------------------------------*/
 /* Style for footer */
 footer {
     background-color: #69212d;
@@ -672,6 +547,7 @@ footer {
     padding: 20px;
 }
 
+/*-----------------------------------------------------------------------------------------------------------*/
 /* Mobil */
 @media screen and (max-width: 768px) {
 
@@ -730,9 +606,6 @@ footer {
         margin-bottom: 20px;
     }
 
-    .stars {
-        font-size: 20px;
-    }
 }
 
 /* Laptop */
@@ -775,7 +648,6 @@ footer {
     /* Works already good */
 }
 
-/*testar söksidan*/
 
 
 

@@ -25,6 +25,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   })
 .catch(error => console.error('Error fetching movie list:', error));
 
+
 /*Get title for each movie in top 10 and display in index.html*/
 fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
   .then(response => response.json())
@@ -136,10 +137,10 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
             .catch(error => console.error('Fel vid hämtning av OMDB-data:', error));
         });
     })
-.catch(error => console.error('Fel vid hämtning av data:', error));
+.catch(error => console.error('Fel vid hämtning av data:', error)); 
 
-// Call the getActiveSelection function when the user clicks the search results div
-searchResults.addEventListener('click', getActiveSelection);
+//------------------------------------------------------------------------------------
+
 
 
 
