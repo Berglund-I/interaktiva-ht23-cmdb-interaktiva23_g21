@@ -459,7 +459,7 @@ p {
 /* Filter column for search results*/
 #filter {
     position: absolute;
-    top: 70%;
+    top: 90%;
     left: 0;
     width: 200px;
     height: 100%;
