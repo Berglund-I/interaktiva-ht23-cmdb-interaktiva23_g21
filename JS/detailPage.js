@@ -3,7 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const imdbID = urlParams.get('imdbID');
 
 /*Get movie details from OMDB API and display on movieDetailPage.html*/
-fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f`)
+fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f`)
   .then(response => response.json())
   .then(movieData => {
     document.querySelector('.movie-frontImage').src = movieData.Poster;
@@ -25,7 +25,7 @@ fetch(`https://grupp6.dsvkurs.miun.se/api/movies/${imdbID}`)
 .catch(error => console.error('Error:', error));
 
 /*Show ratings from other websites*/
-fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f`)
+fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f`)
   .then(response => response.json())
   .then(movieData => {
     // Get references to the HTML elements

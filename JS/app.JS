@@ -8,7 +8,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
     data.movies.forEach((movie, index) => {
       const imdbID = movie.imdbID;
 
-      fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f`)
+      fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f`)
         .then(response => response.json())
         .then(movieData => {
           const imgElement = imgElements[index];
@@ -36,7 +36,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
     data.movies.forEach((movie, index) => {
       const imdbID = movie.imdbID;
 
-      fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f&plot=Title`)
+      fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f&plot=Title`)
       .then(response => response.json())
       .then(omdbData => {
         if(omdbData.Title) {
@@ -65,7 +65,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
     data.movies.forEach((movie, index) => {
       const imdbID = movie.imdbID;
 
-      fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f&plot=Year`)
+      fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f&plot=Year`)
       .then(response => response.json())
       .then(omdbData => {
         if(omdbData.Year) {
@@ -121,7 +121,7 @@ fetch('https://grupp6.dsvkurs.miun.se/api/toplists?cmdbScore=DESC&limit=10')
     data.movies.forEach((movie, index) => {
       const imdbID = movie.imdbID;
 
-      fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f&plot=Plot`)
+      fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=f0f87f8f&plot=Plot`)
       .then(response => response.json())
       .then(omdbData => {
         if(omdbData.Plot) {
